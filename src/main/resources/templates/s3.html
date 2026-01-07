@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>S3 Buckets</title>
+</head>
+<body>
+    <h1>Your S3 Buckets</h1>
+    <ul th:if="${!bucketNames.isEmpty()}">
+        <li th:each="bucketName : ${bucketNames}" th:text="${bucketName}"></li>
+    </ul>
+    <p th:if="${bucketNames.isEmpty()}">No S3 buckets found or an error occurred.</p>
+    <p><a href="/">Back to Home</a></p>
+</body>
+</html>

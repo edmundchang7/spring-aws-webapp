@@ -1,0 +1,25 @@
+package com.example.springawswebapp.controller;
+
+import com.example.springawswebapp.service.S3Service;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+
+import java.util.List;
+
+@Controller
+public class S3Controller {
+
+    private final S3Service s3Service;
+
+    public S3Controller(S3Service s3Service) {
+        this.s3Service = s3Service;
+    }
+
+    @GetMapping("/s3")
+    public String listS3Buckets(Model model) {
+        List<String> bucketNames = s3Service.listBuckets();
+        model.addAttribute("bucketNames", bucketNames);
+        return "s3";
+    }
+}
