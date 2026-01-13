@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Translate Text</title>
+</head>
+<body>
+    <h1>Text Translator</h1>
+
+    <form th:action="@{/translate}" method="post">
+        <div>
+            <label for="sourceText">Source Text:</label>
+            <br>
+            <textarea id="sourceText" name="sourceText" rows="5" cols="50" th:text="${sourceText}"></textarea>
+        </div>
+        <div>
+            <label for="targetLanguage">Translate to:</label>
+            <select id="targetLanguage" name="targetLanguage">
+                <option value="es" th:selected="${targetLanguage == 'es'}">Spanish</option>
+                <option value="fr" th:selected="${targetLanguage == 'fr'}">French</option>
+                <option value="de" th:selected="${targetLanguage == 'de'}">German</option>
+                <option value="ja" th:selected="${targetLanguage == 'ja'}">Japanese</option>
+                <option value="zh" th:selected="${targetLanguage == 'zh'}">Chinese (Simplified)</option>
+                <option value="ar" th:selected="${targetLanguage == 'ar'}">Arabic</option>
+                <option value="pt" th:selected="${targetLanguage == 'pt'}">Portuguese</option>
+            </select>
+        </div>
+        <br>
+        <div>
+            <button type="submit">Translate</button>
+        </div>
+    </form>
+
+    <div th:if="${translatedText}">
+        <h2>Translated Text:</h2>
+        <p th:text="${translatedText}"></p>
+    </div>
+
+    <p><a href="/">Home</a></p>
+    <p><a href="/s3">View S3 Buckets</a></p>
+</body>
+</html>

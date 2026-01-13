@@ -1,0 +1,7 @@
+/app/src/main/java/com/example/springawswebapp/controller/HomeController.java
+/app/src/main/java/com/example/springawswebapp/controller/S3Controller.java
+/app/src/main/java/com/example/springawswebapp/service/TranslateService.java
+/app/src/main/java/com/example/springawswebapp/service/S3Service.java
+/app/src/main/java/com/example/springawswebapp/controller/ReverseController.java
+/app/src/main/java/com/example/springawswebapp/SpringAwsWebappApplication.java
+/app/src/main/java/com/example/springawswebapp/controller/TranslateController.java

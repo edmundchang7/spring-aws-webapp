@@ -19,7 +19,12 @@ public class S3Controller {
     @GetMapping("/s3")
     public String listS3Buckets(Model model) {
         List<String> bucketNames = s3Service.listBuckets();
-        model.addAttribute("bucketNames", bucketNames);
+        if (bucketNames.size() == 1 && bucketNames.get(0).startsWith("Error:")) {
+            model.addAttribute("error", bucketNames.get(0));
+            model.addAttribute("bucketNames", java.util.Collections.emptyList());
+        } else {
+            model.addAttribute("bucketNames", bucketNames);
+        }
         return "s3";
     }
 }

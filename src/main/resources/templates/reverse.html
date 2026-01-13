@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Reverse String</title>
+</head>
+<body>
+    <h1>Reverse a String</h1>
+    <form action="/reverse" method="post">
+        <label for="text">Enter text:</label>
+        <input type="text" id="text" name="text" required>
+        <button type="submit">Reverse</button>
+    </form>
+
+    <div th:if="${originalText}">
+        <h2>Result</h2>
+        <p><strong>Original:</strong> <span th:text="${originalText}"></span></p>
+        <p><strong>Reversed:</strong> <span th:text="${reversedText}"></span></p>
+    </div>
+
+    <p><a href="/">Back to Home</a></p>
+</body>
+</html>
