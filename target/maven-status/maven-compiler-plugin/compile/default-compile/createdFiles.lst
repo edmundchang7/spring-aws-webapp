@@ -1,0 +1,7 @@
+com\example\springawswebapp\service\S3Service.class
+com\example\springawswebapp\controller\ReverseController.class
+com\example\springawswebapp\SpringAwsWebappApplication.class
+com\example\springawswebapp\controller\S3Controller.class
+com\example\springawswebapp\service\TranslateService.class
+com\example\springawswebapp\controller\TranslateController.class
+com\example\springawswebapp\controller\HomeController.class
