@@ -7,10 +7,12 @@
 <body>
     <h1>Your S3 Buckets</h1>
     <p th:if="${error}" th:text="${error}" style="color: red;"></p>
+    <p th:if="${message}" th:text="${message}" style="color: green;"></p>
     <ul th:if="${!bucketNames.isEmpty()}">
         <li th:each="bucketName : ${bucketNames}" th:text="${bucketName}"></li>
     </ul>
     <p th:if="${bucketNames.isEmpty()}">No S3 buckets found or an error occurred.</p>
+    <p><a href="/s3/upload">Upload a file</a></p>
     <p><a href="/">Back to Home</a></p>
 </body>
 </html>
