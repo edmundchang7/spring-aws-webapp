@@ -8,6 +8,10 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.mock.web.MockMultipartFile;
 import org.springframework.test.web.servlet.MockMvc;
 
+import java.io.InputStream;
+
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.verify;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.multipart;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.redirectedUrl;
@@ -37,6 +41,6 @@ public class S3ControllerTest {
                 .andExpect(status().is3xxRedirection())
                 .andExpect(redirectedUrl("/s3"));
 
-        verify(s3Service).uploadFile("test-bucket", "hello.txt", file.getInputStream());
+        verify(s3Service).uploadFile(eq("test-bucket"), eq("hello.txt"), any(InputStream.class));
     }
 }
